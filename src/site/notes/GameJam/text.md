@@ -2,6 +2,8 @@
 {"dg-publish":true,"permalink":"/GameJam/text/"}
 ---
 
+https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
+
 
 问题：
 
@@ -128,23 +130,32 @@ UIManager.Instance.OpenPanel(UIConst.ItemPanel,DetailName);
 //DetailName：物品具体名字
 ```
 ``
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 # 略
 ## 与物品交互（信号）
 - UI
