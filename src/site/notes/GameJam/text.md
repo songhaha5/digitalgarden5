@@ -5,9 +5,9 @@
 https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
 
 
-问题：
+## 问题：
 
-程序
+### 程序
 1. 游戏场景Scene（一层一个还是一共一个）（关于数据保存）
 2. Shader？
 	1. ![Pasted image 20240414180348.png](/img/user/pic/Pasted%20image%2020240414180348.png)
@@ -16,12 +16,12 @@ https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
 3.  GIT流程？
 	1. 每人建一个分支，然后定时合并到主分支？
 
-策划
+### 策划
 1. 汲声钮如何使用？
 	1. 举个游戏案例？
 		1. 如何确定远方在对话（使用汲声钮的前提）
 		2. 怎么确定窃听远方对话（汲声钮如何使用）
-2. <mark style="background: #FF5582A6;">有周目（名片）功能？</mark>：需要存储那些信息？
+2. <mark style="background: #FF5582A6;">有重新游玩（名片）功能？</mark>：需要存储那些信息？
 3. 什么情况下可以点击物品
 	1. 信号：
 		1. 主角面向物品（此时物品高亮显示）
@@ -30,21 +30,23 @@ https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
 4. 玩家有那些状态？
 	1. 是否伪装
 	2. 血量？
-5. 安全、非安全区域的作用明显吗？
-6. 需要UI界面吗？
-	1. 设置界面![Pasted image 20240416210223.png](/img/user/pic/Pasted%20image%2020240416210223.png)
-	2. 奖券界面![Pasted image 20240416205400.png](/img/user/pic/Pasted%20image%2020240416205400.png)
-	3. 信息提示界面![Pasted image 20240416202631.png](/img/user/pic/Pasted%20image%2020240416202631.png)
-	4. 需要给我实例
+5. 安全、非安全区域的作用是什么？
+6. 鼠标贴图需要变换吗？
 7. <mark style="background: #FF5582A6;">什么时候需要回档（死亡）？？？？？</mark>
 		1. 时间到时
 		2. 血量没有
 		3. 对话强制
 		4. 警备员发现
-8. 场景氛围（打光）？
+8. 7. 需要UI界面吗？
+	1. 设置界面![Pasted image 20240416210223.png](/img/user/pic/Pasted%20image%2020240416210223.png)
+	2. 奖券界面![Pasted image 20240416205400.png](/img/user/pic/Pasted%20image%2020240416205400.png)
+	3. 信息提示界面![Pasted image 20240416202631.png](/img/user/pic/Pasted%20image%2020240416202631.png)
+	4. 需要给我实例
+8. 人物状态是否会与UI联动（类似界面血条）？
+9. 场景氛围（打光）？
 
 
-关于分工的思考
+## 关于分工的思考
 - 计时
 	- 倒计时限制
 	- 游戏正常时间
@@ -52,7 +54,9 @@ https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
 	- 时间跳跃
 - 数据保存
 	- ~~确定何时回退~~
-	- 确定保存那些数据
+	- 玩家信息
+	- npc信息
+	- 
 - npc行为
 	- 探测玩家（回档），
 	- 移动（在一定范围内巡逻/站立）
@@ -156,6 +160,7 @@ UIManager.Instance.OpenPanel(UIConst.ItemPanel,DetailName);
 \
 \
 \
+# lve 
 # 略
 ## 与物品交互（信号）
 - UI
