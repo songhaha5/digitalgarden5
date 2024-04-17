@@ -2,9 +2,6 @@
 {"dg-publish":true,"permalink":"/GameJam/text/"}
 ---
 
-https://fabulous-kangaroo-0e9a27.netlify.app/gamejam/text/
-
-
 ## 问题：
 
 ### 程序
