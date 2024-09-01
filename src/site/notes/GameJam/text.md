@@ -2,6 +2,41 @@
 {"dg-publish":true,"permalink":"/GameJam/text/"}
 ---
 
+摄像机切换
+密码锁没做
+优化方面
+
+
+使用道具的流程很奇怪，
+我理解的<mark style="background: #FFF3A3A6;">信号使用道具流程</mark>
+- 没有道具时
+	- 弹出此门需要什么道具
+	- ![微信图片_20240418192143.png](/img/user/pic/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418192143.png)
+- 有道具时
+	- 需要使用此道具吗？（选项框）
+		- ![Pasted image 20240418205129.png](/img/user/pic/Pasted%20image%2020240418205129.png)
+	- 此道具已虽坏，需要修补
+- 使用道具后
+	- 弹出已使用此道具文字
+	- 再点击，界面消失，播放门开的动画，
+- 普通场景给的提示信息
+	- ![Pasted image 20240418205028.png](/img/user/pic/Pasted%20image%2020240418205028.png)
+我理解的<mark style="background: #FFF3A3A6;">你的使用道具流程</mark>（<mark style="background: #FF5582A6;">红色是我的疑惑点</mark>）
+- 没有道具时
+	- 首先互动前，靠近门会弹出<mark style="background: #FF5582A6;">红色禁止通关框？（Shader我无法确保实现，不知道其他程序）</mark>
+	- 然后，点击再次强调无法通关（文字），告诉原因（缺少什么物品）
+- 有道具时
+	- <mark style="background: #FF5582A6;">直接弹出已经使用还是选择是否使用（下图哪一个）</mark>
+		- ![Pasted image 20240418204518.png](/img/user/pic/Pasted%20image%2020240418204518.png)
+	- 如果需要组合道具时
+		- 弹缺少什么信息
+- 使用道具后
+	- 图标变成蓝色
+
+
+Shader 《SIGNALIS | 信号》
+![Pasted image 20240418210143.png](/img/user/pic/Pasted%20image%2020240418210143.png)
+
 ## 问题：
 
 ### 程序
@@ -18,7 +53,7 @@
 	1. 举个游戏案例？
 		1. 如何确定远方在对话（使用汲声钮的前提）
 		2. 怎么确定窃听远方对话（汲声钮如何使用）
-2. <mark style="background: #FF5582A6;">有重新游玩（名片）功能？</mark>：需要存储那些信息？
+2. <mark style="background: #FF5582A6;">有重新游玩（名片（通关后））功能？</mark>：需要存储那些信息？
 3. 什么情况下可以点击物品
 	1. 信号：
 		1. 主角面向物品（此时物品高亮显示）
@@ -26,7 +61,6 @@
 	2. 只在距离内
 4. 玩家有那些状态？
 	1. 是否伪装
-	2. 血量？
 5. 安全、非安全区域的作用是什么？
 6. 鼠标贴图需要变换吗？
 7. <mark style="background: #FF5582A6;">什么时候需要回档（死亡）？？？？？</mark>
@@ -43,6 +77,7 @@
 9. 场景氛围（打光）？
 
 
+
 ## 关于分工的思考
 - 计时
 	- 倒计时限制
@@ -53,7 +88,6 @@
 	- ~~确定何时回退~~
 	- 玩家信息
 	- npc信息
-	- 
 - npc行为
 	- 探测玩家（回档），
 	- 移动（在一定范围内巡逻/站立）
@@ -174,6 +208,11 @@ UIManager.Instance.OpenPanel(UIConst.ItemPanel,DetailName);
 ### 下面是重点
 点击--移动--附近有东西
 物品交互方式（信号）
+- 物品使用提示
+	- 无道具
+		- ![微信图片_20240418192143.png](/img/user/pic/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240418192143.png)
+	- 有道具
+		- ![动画fasdfdsafasdf.gif](/img/user/pic/%E5%8A%A8%E7%94%BBfasdfdsafasdf.gif)
 - 用对话框显示（提示玩家）信息
 { #1w5qmu}
 
@@ -188,7 +227,7 @@ UIManager.Instance.OpenPanel(UIConst.ItemPanel,DetailName);
 - 可交互物品（放入背包后消失）
 { #nxrkz3}
 
-	- 用对话框显示信息
+	- 用对话框显示信息（鼠标消失了😂，使用键盘更改）
 	- ![Pasted image 20240409142532.png](/img/user/pic/Pasted%20image%2020240409142532.png)
 - 移动摄像机物品，且用对话框显示信息
 { #clcglm}
@@ -284,3 +323,19 @@ UIManager.Instance.OpenPanel(UIConst.ItemPanel,DetailName);
 - norca
 
 
+
+
+
+
+
+
+先确定背包是否由此物品
+交互（传入名字） 
+- 查阅背包是否有
+	- 有
+		- UI界面（确定使用吗？）
+	- 无
+		- 缺少什么物品
+			- UI界面（缺少普通物品）
+			- 缺号组合物品（查阅组合物品数据）
+				- UI界面（缺少什么物品（组合物品中的））
