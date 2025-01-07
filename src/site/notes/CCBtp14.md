@@ -2,7 +2,6 @@
 {"dg-publish":true,"permalink":"/CCBtp14/"}
 ---
 
-
 思考，希望有更好的方式
 红色部分：程序评判合理性
 1. tp1转tp4 简单些（批量化操作）
